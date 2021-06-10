@@ -1,0 +1,26 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'java'
+}
+
+group 'com.tasubo.dev'
+version '1.2-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.apache.hadoop:hadoop-client:3.3.0'
+    compileOnly 'org.apache.hive:hive-exec:3.1.2'
+
+    implementation group: 'com.neovisionaries', name: 'nv-i18n', version: '1.28'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'org.apache.hive:hive-exec:3.1.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
